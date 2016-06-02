@@ -1,8 +1,9 @@
 class Dose < ActiveRecord::Base
-  validates :description, presence: true, 
+  validates :description, presence: true 
   validates :description, uniqueness: true
-  validates_associated :cocktail, :ingredient, presence: true 
-  validates_uniqueness_of :description, scope: [:cocktail_id, :ingredient_id]
+  validates :cocktail, presence: true, uniqueness: { scope: :ingredient } 
+  validates :ingredient, presence: true 
+  # 
 
   belongs_to :cocktail
   belongs_to :ingredient
