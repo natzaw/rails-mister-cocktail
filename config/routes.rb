@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
 
 
+  get 'doses/new'
+
+  get 'doses/create'
+
+  get 'doses/delete'
+
+  get 'cocktails/index'
+
+  get 'cocktails/show'
+
+  get 'cocktails/new'
+
+  get 'cocktails/create'
+
   root "cocktails#index"
 
   resources :cocktails do 
